@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>MedicalDeviceTracking.API</AssemblyName>
+		<RootNamespace>MedicalDeviceTracking.API</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Use EF Core 9.x with compatible Npgsql 9.x -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
+
+		<!-- AutoMapper - NO Extensions package needed for 13.x -->
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+
+		<!-- Other packages -->
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+		<PackageReference Include="Confluent.Kafka" Version="2.11.1" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MedicalDeviceTracking.Application\MedicalDeviceTracking.Application.csproj" />
+		<ProjectReference Include="..\MedicalDeviceTracking.Infrastructure\MedicalDeviceTracking.Infrastructure.csproj" />
+	</ItemGroup>
+</Project>
