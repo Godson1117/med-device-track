@@ -25,4 +25,8 @@
     <ProjectReference Include="..\MedicalDeviceTracking.Domain\MedicalDeviceTracking.Domain.csproj" />
     <ProjectReference Include="..\MedicalDeviceTracking.Application\MedicalDeviceTracking.Application.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
 </Project>
