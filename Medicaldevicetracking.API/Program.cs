@@ -37,6 +37,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // AutoMapper - Now built into the main package (no separate Extensions package needed)
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddSingleton<ICloudImageService, CloudinaryImageService>();
 
 // Repositories
 builder.Services.AddScoped<IGatewayRepository, GatewayRepository>();
