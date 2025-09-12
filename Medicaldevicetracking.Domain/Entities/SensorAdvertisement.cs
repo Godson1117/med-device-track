@@ -1,17 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using MedicalDeviceTracking.Domain.Enums;
+﻿// MedicalDeviceTracking.Domain/Entities/SensorAdvertisement.cs (updated)
+using System.ComponentModel.DataAnnotations;
 
 namespace MedicalDeviceTracking.Domain.Entities;
-
 public class SensorAdvertisement
 {
     public Guid Id { get; set; }
     public Guid GatewayId { get; set; }
-    [Required]
-    [MaxLength(20)]
+    public Guid? TagId { get; set; }
+
+    [Required, MaxLength(20)]
     public string Type { get; set; } = string.Empty;
+
     [MaxLength(50)]
     public string MacAddress { get; set; } = string.Empty;
+
     public DateTime Timestamp { get; set; }
     public int? Rssi { get; set; }
     public int? Battery { get; set; }
@@ -28,4 +30,5 @@ public class SensorAdvertisement
     public DateTime UpdatedAt { get; set; }
 
     public virtual Gateway Gateway { get; set; } = null!;
+    public virtual Tag? Tag { get; set; }
 }

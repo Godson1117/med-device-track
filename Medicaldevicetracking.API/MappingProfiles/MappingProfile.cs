@@ -27,5 +27,21 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
             .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
             .ForMember(dest => dest.Gateway, opt => opt.Ignore());
+
+        CreateMap<Gateway, GatewayReadDto>();
+        CreateMap<GatewayCreateDto, Gateway>();
+        CreateMap<GatewayUpdateDto, Gateway>();
+
+        // Tags
+        CreateMap<Tag, TagReadDto>();
+        CreateMap<TagCreateDto, Tag>();
+        CreateMap<TagUpdateDto, Tag>();
+
+        // FloorMaps
+        CreateMap<FloorMap, FloorMapReadDto>();
+        CreateMap<FloorMapCreateDto, FloorMap>();
+        CreateMap<FloorMapUpdateDto, FloorMap>();
+
+
     }
 }

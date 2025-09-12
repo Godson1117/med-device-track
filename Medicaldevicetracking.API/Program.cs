@@ -37,6 +37,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // AutoMapper - Now built into the main package (no separate Extensions package needed)
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddSingleton<ICloudImageService, CloudinaryImageService>();
 
 // Repositories
 builder.Services.AddScoped<IGatewayRepository, GatewayRepository>();
@@ -47,7 +48,16 @@ builder.Services.AddScoped<IKafkaDataService, KafkaDataService>();
 
 // Background Services
 builder.Services.AddHostedService<KafkaConsumerService>();
+builder.Services.AddScoped<IGatewayRepository, GatewayRepository>();
+builder.Services.AddScoped<ITagRepository, TagRepository>();
+builder.Services.AddScoped<IFloorMapRepository, FloorMapRepository>();
+builder.Services.AddScoped<ISensorAdvertisementRepository, SensorAdvertisementRepository>();
 
+// Services
+builder.Services.AddScoped<IGatewayService, GatewayService>();
+builder.Services.AddScoped<ITagService, TagService>();
+builder.Services.AddScoped<IFloorMapService, FloorMapService>();
+builder.Services.AddScoped<IKafkaDataService, KafkaDataService>();
 // Logging
 builder.Services.AddLogging();
 

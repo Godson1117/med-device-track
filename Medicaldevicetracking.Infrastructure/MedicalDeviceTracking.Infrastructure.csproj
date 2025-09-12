@@ -7,6 +7,7 @@
   
   <ItemGroup>
     <!-- Use EF Core 9.x with compatible Npgsql 9.x -->
+    <PackageReference Include="CloudinaryDotNet" Version="1.27.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
@@ -24,5 +25,9 @@
   <ItemGroup>
     <ProjectReference Include="..\MedicalDeviceTracking.Domain\MedicalDeviceTracking.Domain.csproj" />
     <ProjectReference Include="..\MedicalDeviceTracking.Application\MedicalDeviceTracking.Application.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>
